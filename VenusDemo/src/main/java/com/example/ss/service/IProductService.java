@@ -6,7 +6,9 @@ import com.example.ss.entity.ProductEntity;
 
 public interface IProductService {
 	List<ProductEntity> findAll();  
+	ProductEntity findById(int id, List<ProductEntity> productEntity);
 	List<ProductEntity> update(ProductEntity pe, List<ProductEntity> productEntity );
 	List<ProductEntity> insert(int id, String name, double pri, List<ProductEntity> productEntity);
 	List<ProductEntity> delete(int id, List<ProductEntity> productEntity);
+	List<ProductEntity> findById();
 }

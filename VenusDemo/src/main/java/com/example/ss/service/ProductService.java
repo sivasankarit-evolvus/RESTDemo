@@ -23,6 +23,20 @@ public class ProductService implements IProductService{
 		products.add(new ProductEntity(105,"Air Conditioner",35000));
 		return(products);
 	}
+	
+	@Override
+	public ProductEntity findById(int id, List<ProductEntity> productEntity) {
+		
+		ProductEntity p= new ProductEntity();
+		for(int i=0;i<productEntity.size();i++) {
+			p=productEntity.get(i);
+			if(p.getPid()==id) {
+				break;
+			}
+		}
+		return p;
+	}
+	
 	@Override
 	public List<ProductEntity> delete(int id, List<ProductEntity> productEntity){
 		ProductEntity p= new ProductEntity();
@@ -63,5 +77,6 @@ public class ProductService implements IProductService{
 		
 		return products;
 	}
+	
 	
 }

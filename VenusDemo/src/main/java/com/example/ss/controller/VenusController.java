@@ -29,13 +29,13 @@ public class VenusController {
 	return products;  
 	}  
 	
-	@GetMapping(value = "/getProduct/{index}")  
-	public ProductEntity getProduct(@PathVariable int index)   
+	@GetMapping(value = "/getProduct/{id}")  
+	public ProductEntity getProduct(@PathVariable int id)   
 	{  
 	//Finds the Product List
 		List<ProductEntity> products = productService.findAll();
 	
-		return (products.get(index));
+		return (productService.findById(id, products));
 	 
 	}  
 	
